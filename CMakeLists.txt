@@ -35,7 +35,7 @@ else (WIN32)
 	else ("${CMAKE_INSTALL_PREFIX}" STREQUAL /usr)
 		set (SYSCONFDIR etc/mosquitto)
 	endif ("${CMAKE_INSTALL_PREFIX}" STREQUAL /usr)
-	
+
 	set (LIBDIR lib${LIB_SUFFIX})
 	set (CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${LIBDIR}")
 	set (INCLUDEDIR include)
@@ -74,6 +74,8 @@ endif (${WITH_SOCKS} STREQUAL ON)
 option(WITH_SRV "Include SRV lookup support?" OFF)
 
 option(DOCUMENTATION "Build documentation?" ON)
+
+option(WITH_STATIC_LIBRARIES "Build static versions of the libmosquitto/pp libraries?" OFF)
 
 # ========================================
 # Include projects
